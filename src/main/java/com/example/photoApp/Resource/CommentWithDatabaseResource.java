@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/comment")
 public class CommentWithDatabaseResource {
     @Autowired
     private CommentWithDatabaseService commentWithDatabaseService;
