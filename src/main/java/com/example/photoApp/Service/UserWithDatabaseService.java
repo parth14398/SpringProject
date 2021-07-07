@@ -1,10 +1,12 @@
 package com.example.photoApp.Service;
 
+import com.example.photoApp.Exception.restrictedInfoClass;
 import com.example.photoApp.Model.UserWithDatabase;
 import com.example.photoApp.Repository.UserWithDatabaseRepository;
 import com.example.photoApp.Resource.UserWithDatabaseResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,5 +33,10 @@ public class UserWithDatabaseService {
 
     public Optional<UserWithDatabase> getDataById(String userId) {
         return userWithDatabaseRepository.findById(userId);
+    }
+
+    public List<UserWithDatabase> getDataByname(String name){
+
+        return userWithDatabaseRepository.findByName(name);
     }
 }
