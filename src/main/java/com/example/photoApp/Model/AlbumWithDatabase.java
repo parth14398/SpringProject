@@ -1,13 +1,19 @@
 package com.example.photoApp.Model;
 
+import com.example.photoApp.Validation.ValidName;
 import nonapi.io.github.classgraph.json.Id;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Max;
 
 public class AlbumWithDatabase {
         @Id
         private String id;
+        @Length(max =10 )
         private String name;
         private String coverPhotoUrl;
         private String dateCreated;
+        @ValidName
         private String createdBy;
 
         public AlbumWithDatabase(String name ,String coverPhotoUrl ,String dateCreated ,String createdBy){

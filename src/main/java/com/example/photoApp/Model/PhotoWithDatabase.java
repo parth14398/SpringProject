@@ -1,5 +1,6 @@
 package com.example.photoApp.Model;
 
+import com.example.photoApp.Validation.ValidName;
 import nonapi.io.github.classgraph.json.Id;
 
 public class PhotoWithDatabase {
@@ -7,6 +8,7 @@ public class PhotoWithDatabase {
     private String id;
     private String albumId;
     private String photoUrl;
+    @ValidName
     private String createdBy;
     private String dateCreated;
 

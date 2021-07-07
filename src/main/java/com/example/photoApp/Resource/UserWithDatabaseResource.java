@@ -33,7 +33,10 @@ public class UserWithDatabaseResource {
 
 
     @PostMapping
-    public UserWithDatabase saveData(@RequestBody @Valid UserWithDatabase userWithDatabase){
+    public UserWithDatabase saveData(@RequestBody @Valid UserWithDatabase userWithDatabase) throws restrictedInfoClass {
+        if(userWithDatabase.getName().equalsIgnoreCase("root")){
+            throw new restrictedInfoClass();
+        }
         return userWithDatabaseService.savaData(userWithDatabase);
     }
 
@@ -50,7 +53,7 @@ public class UserWithDatabaseResource {
 
     @GetMapping("/name")
     public List<UserWithDatabase> getDataByname(@RequestParam (name="name") String name) throws restrictedInfoClass{
-        if(name.equalsIgnoreCase("parth1")){
+        if(name.equalsIgnoreCase("root")){
             throw new restrictedInfoClass();
         }
         return userWithDatabaseService.getDataByname(name);

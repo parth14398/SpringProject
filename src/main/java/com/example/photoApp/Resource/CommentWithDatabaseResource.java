@@ -5,6 +5,7 @@ import com.example.photoApp.Service.CommentWithDatabaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,12 +20,12 @@ public class CommentWithDatabaseResource {
         return commentWithDatabaseService.getData();
     }
     @PostMapping
-    public  CommentWithDatabase saveData(@RequestBody CommentWithDatabase commentWithDatabase){
+    public  CommentWithDatabase saveData(@RequestBody @Valid CommentWithDatabase commentWithDatabase){
         return commentWithDatabaseService.saveData(commentWithDatabase);
     }
 
     @PutMapping
-    public  CommentWithDatabase updateData(@RequestBody CommentWithDatabase commentWithDatabase){
+    public  CommentWithDatabase updateData(@RequestBody @Valid CommentWithDatabase commentWithDatabase){
         return commentWithDatabaseService.updateData(commentWithDatabase);
     }
     @DeleteMapping

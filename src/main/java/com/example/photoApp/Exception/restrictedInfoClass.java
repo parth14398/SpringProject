@@ -3,6 +3,6 @@ package com.example.photoApp.Exception;
 public class restrictedInfoClass extends Exception {
     @Override
     public String getMessage() {
-        return "Restricted information";
+        return "Name can not be root";
     }
 }

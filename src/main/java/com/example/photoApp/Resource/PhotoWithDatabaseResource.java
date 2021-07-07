@@ -5,6 +5,7 @@ import com.example.photoApp.Service.PhotoWithDatabaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,11 +20,11 @@ public class PhotoWithDatabaseResource {
         return photoWithDatabaseService.getData();
     }
     @PostMapping
-    public PhotoWithDatabase savaData(@RequestBody PhotoWithDatabase photoWithDatabase){
+    public PhotoWithDatabase savaData(@RequestBody @Valid PhotoWithDatabase photoWithDatabase){
         return photoWithDatabaseService.savaData(photoWithDatabase);
     }
     @PutMapping
-    public PhotoWithDatabase updateData(@RequestBody PhotoWithDatabase photoWithDatabase){
+    public PhotoWithDatabase updateData(@RequestBody @Valid PhotoWithDatabase photoWithDatabase){
         return photoWithDatabaseService.updateData(photoWithDatabase);
     }
     @DeleteMapping

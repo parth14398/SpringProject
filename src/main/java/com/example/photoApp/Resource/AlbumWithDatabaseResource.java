@@ -6,6 +6,7 @@ import com.example.photoApp.Service.AlbumWithDatabaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,11 +21,11 @@ public class AlbumWithDatabaseResource {
         return albumWithDatabaseService.getData();
     }
     @PostMapping
-    public AlbumWithDatabase saveData(@RequestBody AlbumWithDatabase albumWithDatabase){
+    public AlbumWithDatabase saveData(@RequestBody  @Valid  AlbumWithDatabase albumWithDatabase){
         return albumWithDatabaseService.savaData(albumWithDatabase);
     }
     @PutMapping
-    public AlbumWithDatabase updateData(@RequestBody AlbumWithDatabase albumWithDatabase){
+    public AlbumWithDatabase updateData(@RequestBody @Valid AlbumWithDatabase albumWithDatabase){
         return albumWithDatabaseService.updateData(albumWithDatabase);
     }
     @DeleteMapping

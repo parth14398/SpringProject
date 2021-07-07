@@ -1,10 +1,17 @@
 package com.example.photoApp.Model;
 
+import com.example.photoApp.Validation.ValidName;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 public class CommentWithDatabase {
     private String id;
     private String photoId;
+    @ValidName
     private String createdBy;
     private String dateCreated;
+    @Min(5)
     private String message;
 
     public CommentWithDatabase(String photoId ,String createdBy ,String dateCreated ,String message){
