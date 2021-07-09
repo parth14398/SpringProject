@@ -19,7 +19,7 @@ import java.io.IOException;
 public class FileService {
     public boolean postFile(MultipartFile file) {
 
-        BasicAWSCredentials basicAWSCredentials = new BasicAWSCredentials("AKIARQ5G64GLAL6UI6SA","gxoqn7nnSioYGNp3hPC+woamF3diehmfx2lTgU12" );
+
 
         final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials)).withRegion(Regions.US_EAST_2).build();
         try {
@@ -35,13 +35,13 @@ public class FileService {
 
     }
     public S3Object getFile(String key){
-        BasicAWSCredentials basicAWSCredentials = new BasicAWSCredentials("AKIARQ5G64GLAL6UI6SA","gxoqn7nnSioYGNp3hPC+woamF3diehmfx2lTgU12" );
+
 
         final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials)).withRegion(Regions.US_EAST_2).build();
         return s3.getObject("backendgetmehired", key);
     }
     public void deleteFile(String key){
-        BasicAWSCredentials basicAWSCredentials = new BasicAWSCredentials("AKIARQ5G64GLAL6UI6SA","gxoqn7nnSioYGNp3hPC+woamF3diehmfx2lTgU12" );
+
 
         final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials)).withRegion(Regions.US_EAST_2).build();
         s3.deleteObject("backendgetmehired",key);
